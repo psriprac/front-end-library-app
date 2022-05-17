@@ -1,0 +1,166 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(169, 169, 245);
+    height: 100vh;
+    width: auto;
+    overflow: auto;
+    row-gap: 25px;
+}
+
+#container #ui {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    #container #ui {
+        align-content: end;
+        height: 600px;
+    }
+
+    #container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 100fr;
+    }
+}
+
+#container #ui h1 {
+    justify-self: center;
+}
+
+#container #ui #book-info {
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    justify-self: center;
+    border-radius: 20px;
+    padding: 20px;
+
+    position: relative;
+    top: 40px;
+
+    display: none;
+}
+
+#container #ui #book-info #book-form #form-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    height: 200px;
+}
+
+button#submit-book,
+button#add-book {
+    outline: none;
+    border: none;
+    height: 40px;
+    margin: 10px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    justify-self: center;
+    font-weight: 400;
+}
+
+#submit-book {
+    grid-column: 1 / 3;
+    background-color: rgb(230, 230, 230);
+}
+
+#submit-book:active {
+    background-color: rgb(169, 169, 245);
+    color: white;
+}
+
+#container #output {
+    background-color: white;
+    height: 80vh;
+    width: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    justify-self: center;
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+#container #output #card {
+    background-color: rgb(230, 230, 230);
+    height: 180px;
+    width: 200px;
+    border-radius: 20px;
+    
+    display: grid;
+    grid-template-columns: 20fr 1fr;
+    grid-template-rows: repeat(4fr);
+    padding: 20px;
+    box-shadow: 2px 2px 5px;
+
+    align-items: center;
+}
+
+#container #output #card #author,
+#container #output #card #pages {
+    grid-column: 1 / 3;
+}
+
+#add-book {
+    background-color: rgb(230, 230, 230);
+}
+
+button:hover {
+    transform: scale(0.9);
+    transition: all 100ms;
+}
+
+#add-book:active {
+    background-color: rgb(169, 169, 245);
+    color: white;
+}
+
+input { 
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(230, 230, 230);
+}
+
+button#close-card {
+    margin: 0;
+    padding: 0;
+    justify-self: end;
+    align-self: start;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(255, 125, 125);
+    color: white;
+}
+
+button#read-toggle {
+    margin: 0 10px;
+    padding: 0 10px;
+    justify-self: center;
+    align-self: center;
+    height: 22px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(255, 125, 125);
+    color: white;
+}
